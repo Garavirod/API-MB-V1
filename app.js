@@ -24,6 +24,9 @@ sequelize.authenticate()
 
 // Static
 app.use(express.static(path.join(__dirname, 'public'))); //path/public
+app.get('/*', function(req, res, next) {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 
 // API path
